@@ -1,3 +1,5 @@
+Trying to repo https://github.com/ROCm/ROCm/issues/4391
+
 # How to run
 docker run -it --network=host --ipc=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $HOME/dockerx:/dockerx rocm/pytorch:latest
 
