@@ -10,4 +10,5 @@ pip3 install pandas <br/>
 pip3 uninstall numpy # While installing pandas it will bump up the numpy version so it will throw incompatible errors, so we will uninstall numpy-2.2.3 and install 1.22.4 <br/>
 pip3 install numpy==1.22.4 <br/>
 python3 bert.py <br/>
-python3 roberta.py
+python3 roberta.py <br/>
+python3 bert_update.py --help
