@@ -70,22 +70,7 @@ def train_cross_encoder(csv_filename, precision="default", epochs=1, batch_size=
         
         model = CrossEncoder('google-bert/bert-base-multilingual-uncased', num_labels=1)
         
-        #device = "cuda" if torch.cuda.is_available() else "cpu"
-        
-        # Detect if AMD ROCm is available
-        if torch.cuda.is_available():
-            device = "cuda"  # NVIDIA GPU with CUDA
-        elif torch.backends.mps.is_available():
-            device = "mps"  # Apple Silicon M1/M2 GPUs
-        elif torch.has_mps:  # For future MPS support
-            device = "mps"
-        elif torch.cuda.device_count() > 1:
-            device = "cuda"  # Multi-GPU (NVIDIA)
-        elif torch.backends.hip.is_available():
-            device = "hip"  # AMD GPU with ROCm
-        else:
-            device = "cpu"  # Default to CPU
-
+        device = "cuda" if torch.cuda.is_available() else "cpu"
         model.model.to(device)
         
         # Set precision mode
